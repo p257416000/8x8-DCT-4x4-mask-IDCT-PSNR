@@ -63,4 +63,7 @@ for i in range(0, height, block_size):
 cv2_imshow(idct_image)
 cv2.imwrite("lena_dct_idct_4x4.jpg", idct_image)
 
+from skimage.metrics import peak_signal_noise_ratio
+psnr = peak_signal_noise_ratio(image, idct_image)
+print(f"PSNR: {psnr} dB")
 
